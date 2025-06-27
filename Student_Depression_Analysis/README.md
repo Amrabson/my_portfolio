@@ -11,7 +11,7 @@ This project aims to predict depression among university students using machine 
 ## Project Files
 - `StudentDepressionNotebook.ipynb`: Jupyter notebook for all code and analysis.
 - `student_depression_dataset.csv`: The dataset used for analysis.
-- `student_depression_rf_model.joblib`: Saved trained Random Forest model.
+- `student_depression_rf_model.joblib`: Saved trained Random Forest model. *(Not included due to GitHub file size limits. Available upon request.)*
 - `student_depression_eda_report.html`: Automated EDA profile report.
 - `data dictionary.csv`: Data dictionary for all features.
 - `StudentDepressionNotebook.pdf`: PDF report of the analysis.
