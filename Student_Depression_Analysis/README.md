@@ -52,3 +52,6 @@ This project is licensed under the MIT License.
 
 ## References
 - [Kaggle: Student Depression Dataset](https://www.kaggle.com/datasets/adilshamim8/student-depression-dataset)
+
+## Author
+Aharon Rabson
