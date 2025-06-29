@@ -196,7 +196,7 @@
 </head>
 <body>
   <header>
-    <img src="https://avatars.githubusercontent.com/u/129668406?s=400&u=b5b054471874b0224b796b9ee5fa9726697ba07e&v=4" alt="Avatar" class="avatar" />
+    <img src="https://avatars.githubusercontent.com/u/129668406?s=400&u=2be59ee658275d12ccd02e93b51beb4eb23ca914&v=4" alt="Avatar" class="avatar" />
     <h1>Aharon Rabson</h1>
     <div class="subtitle">MSc Data Science | Big Data • ML • EDA • Analytics</div>
     <div class="links">
@@ -205,6 +205,20 @@
      <!-- <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a> -->
     </div>
   </header>
+  <div id="modal" style="display:none;position:fixed;z-index:1000;top:0;left:0;width:100vw;height:100vh;background:rgba(20,24,34,0.85);align-items:center;justify-content:center;">
+  <div id="modal-content" style="background:#23272f;padding:2.2em 2em 1.6em 2em;border-radius:1.2rem;max-width:400px;max-height:88vh;overflow:auto;box-shadow:0 4px 44px #00c4ff22;position:relative;color:#fff;">
+    <button onclick="closeModal()" style="position:absolute;top:10px;right:16px;font-size:1.4em;background:none;border:none;color:#00c4ff;cursor:pointer;">&times;</button>
+    <div id="modal-inner"></div>
+  </div>
+</div>
+<footer style="padding:1.2em 0;text-align:center;color:#909aa8;background:#181c23;">
+  <div>
+    <span>© Aharon Rabson 2025 · Built for NSDS Portfolio | Powered by HTML, CSS, and JS</span>
+  </div>
+  <div style="margin-top:.6em;">
+    <small>Inspired by modern UI, mobile-friendly, and 100% open source.</small>
+  </div>
+</footer>
   <main>
     <div class="filter-bar" id="filterBar">
       <!-- Tag filter buttons will be injected here -->
@@ -213,93 +227,139 @@
       <!-- Project cards will appear here -->
     </section>
   </main>
-  <script>
-    // === CONFIGURE YOUR PROJECTS HERE ===
-    const PROJECTS = [
-      {
-        title: "AI Influence On Employment",
-        desc: "Analysis of how AI is impacting global job markets, including EDA, ML models, dashboards, and final report.",
-        tags: ["AI", "EDA", "Regression", "Report"],
-        img: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80", // Replace with your own image or keep
-        links: [
-          { text: "Open Folder", url: "AllInfluenceOnEmployment/" },
-          { text: "GitHub", url: "https://github.com/Amrabson/my_portfolio/tree/main/AIInfluenceOnEmployment" }
-        ]
-      },
-      {
-        title: "Student Depression Analysis",
-        desc: "Exploratory and predictive analytics on student depression, with data cleaning, visualization, and predictive modeling.",
-        tags: ["Classification", "Python", "EDA", "ML"],
-        img: "https://images.unsplash.com/photo-1515168833906-d2a3b82b3026?auto=format&fit=crop&w=600&q=80",
-        links: [
-          { text: "Open Folder", url: "https://github.com/Amrabson/my_portfolio/tree/main/Student_Depression_Analysis" }
-        ]
-      },
-      // Add more projects below!
-      // {
-      //   title: "Another Project",
-      //   desc: "Short summary.",
-      //   tags: ["ML", "Big Data"],
-      //   img: "url_or_path_to_image",
-      //   links: [
-      //     { text: "View", url: "path_to_folder_or_file" }
-      //   ]
-      // }
-    ];
+<script>
+  // === CONFIGURE YOUR PROJECTS HERE ===
+  const PROJECTS = [
+    {
+      title: "Portfolio Website (This Page)",
+      desc: "Fully custom, filterable portfolio and project gallery for my MSc Data Science final. Features modern design, filtering, JS-rendered cards, modal project popups, and animated entrance.",
+      tags: ["Portfolio", "HTML", "CSS", "JavaScript"],
+      img: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
+      links: [
+        { text: "View Source", url: "https://github.com/Amrabson/my_portfolio" }
+      ]
+    },
+    {
+      title: "AI Influence On Employment",
+      desc: "Analysis of how AI is impacting global job markets, including EDA, ML models, dashboards, and final report.",
+      tags: ["AI", "EDA", "Regression", "Report"],
+      img: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80",
+      links: [
+        { text: "Open Folder", url: "AllInfluenceOnEmployment/" },
+        { text: "GitHub", url: "https://github.com/Amrabson/my_portfolio/tree/main/AIInfluenceOnEmployment" }
+      ]
+    },
+    {
+      title: "Student Depression Analysis",
+      desc: "Exploratory and predictive analytics on student depression, with data cleaning, visualization, and predictive modeling.",
+      tags: ["Classification", "Python", "EDA", "ML"],
+      img: "https://images.unsplash.com/photo-1515168833906-d2a3b82b3026?auto=format&fit=crop&w=600&q=80",
+      links: [
+        { text: "Open Folder", url: "https://github.com/Amrabson/my_portfolio/tree/main/Student_Depression_Analysis" }
+      ]
+    },
+    // Add more projects below!
+    // {
+    //   title: "Another Project",
+    //   desc: "Short summary.",
+    //   tags: ["ML", "Big Data"],
+    //   img: "url_or_path_to_image",
+    //   links: [
+    //     { text: "View", url: "path_to_folder_or_file" }
+    //   ]
+    // }
+  ];
 
-    // ==== UI CODE: Do Not Edit Below Unless Customizing ====
+  // Get all unique tags
+  const ALL_TAGS = [...new Set(PROJECTS.flatMap(p => p.tags))].sort();
 
-    // Get all unique tags
-    const ALL_TAGS = [...new Set(PROJECTS.flatMap(p => p.tags))].sort();
+  let currentFilter = "All";
 
-    let currentFilter = "All";
+  // Render filter bar
+  function renderFilters() {
+    const filterBar = document.getElementById("filterBar");
+    filterBar.innerHTML = `<button class="filter-btn${currentFilter === 'All' ? ' active' : ''}" onclick="filterProjects('All')">All</button>` +
+      ALL_TAGS.map(tag =>
+        `<button class="filter-btn${currentFilter === tag ? ' active' : ''}" onclick="filterProjects('${tag}')">${tag}</button>`
+      ).join('');
+  }
 
-    // Render filter bar
-    function renderFilters() {
-      const filterBar = document.getElementById("filterBar");
-      filterBar.innerHTML = `<button class="filter-btn${currentFilter === 'All' ? ' active' : ''}" onclick="filterProjects('All')">All</button>` +
-        ALL_TAGS.map(tag =>
-          `<button class="filter-btn${currentFilter === tag ? ' active' : ''}" onclick="filterProjects('${tag}')">${tag}</button>`
-        ).join('');
+  // Render project cards with animation and click-to-modal
+  function renderProjects() {
+    const grid = document.getElementById("projectsGrid");
+    let filtered = currentFilter === "All"
+      ? PROJECTS
+      : PROJECTS.filter(p => p.tags.includes(currentFilter));
+    if (!filtered.length) {
+      grid.innerHTML = `<div style="color:#8b9eb7;grid-column:1/-1;font-size:1.3em;text-align:center;padding:3em 1em;">No projects found for <b>${currentFilter}</b>.</div>`;
+      return;
     }
-
-    // Render project cards
-    function renderProjects() {
-      const grid = document.getElementById("projectsGrid");
-      let filtered = currentFilter === "All"
-        ? PROJECTS
-        : PROJECTS.filter(p => p.tags.includes(currentFilter));
-      if (!filtered.length) {
-        grid.innerHTML = `<div style="color:#8b9eb7;grid-column:1/-1;font-size:1.3em;text-align:center;padding:3em 1em;">No projects found for <b>${currentFilter}</b>.</div>`;
-        return;
-      }
-      grid.innerHTML = filtered.map(p => `
-        <div class="project-card">
-          <img class="project-img" src="${p.img}" alt="${p.title}"/>
-          <div class="project-content">
-            <div class="project-title">${p.title}</div>
-            <div class="tags">${p.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}</div>
-            <div class="project-desc">${p.desc}</div>
-            <div class="project-links">
-              ${p.links.map(link =>
-                `<a href="${link.url}" target="_blank">${link.text}</a>`
-              ).join('')}
-            </div>
+    grid.innerHTML = filtered.map((p, i) => `
+      <div class="project-card" style="animation:fadein 0.5s ${(i+1)*0.06}s both;" tabindex="0"
+        onclick="showModal(${PROJECTS.indexOf(p)})"
+        onkeypress="if(event.key==='Enter'){showModal(${PROJECTS.indexOf(p)})}">
+        <img class="project-img" src="${p.img}" alt="${p.title}"/>
+        <div class="project-content">
+          <div class="project-title">${p.title}</div>
+          <div class="tags">${p.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}</div>
+          <div class="project-desc">${p.desc}</div>
+          <div class="project-links">
+            ${p.links.map(link =>
+              `<a href="${link.url}" target="_blank" onclick="event.stopPropagation()">${link.text}</a>`
+            ).join('')}
           </div>
         </div>
-      `).join('');
-    }
+      </div>
+    `).join('');
+  }
 
-    // Tag filter function
-    function filterProjects(tag) {
-      currentFilter = tag;
-      renderFilters();
-      renderProjects();
+  // Animation for card entrance
+  const styleSheet = document.createElement("style");
+  styleSheet.innerText = `
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(28px) scale(.97);}
+      to   { opacity: 1; transform: none;}
     }
+  `;
+  document.head.appendChild(styleSheet);
 
-    // On load
+  // Modal logic for project details
+  function showModal(idx) {
+    const p = PROJECTS[idx];
+    const inner = document.getElementById('modal-inner');
+    inner.innerHTML = `
+      <img src="${p.img}" alt="${p.title}" style="width:100%;border-radius:12px;margin-bottom:.7em;">
+      <h2 style="color:#00c4ff;margin:0 0 .25em 0;">${p.title}</h2>
+      <div style="margin-bottom:0.7em;">${p.tags.map(tag=>`<span class="tag" style="margin-right:6px;background:#3bd9d9;color:#191f24;padding:2px 8px;">${tag}</span>`).join('')}</div>
+      <div style="color:#bbb;font-size:1.08em;margin-bottom:1.1em;">${p.desc}</div>
+      <div>
+        ${p.links.map(link=>`<a href="${link.url}" style="display:inline-block;margin:0.25em 0.7em 0 0;background:#222;color:#00c4ff;padding:.37em 1.1em;border-radius:9px;font-weight:600;text-decoration:none;border:1px solid #00c4ff;" target="_blank">${link.text}</a>`).join('')}
+      </div>
+    `;
+    document.getElementById('modal').style.display = "flex";
+    document.body.style.overflow = "hidden";
+  }
+  function closeModal() {
+    document.getElementById('modal').style.display = "none";
+    document.body.style.overflow = "";
+  }
+  window.onclick = function(e) {
+    if(e.target.id==='modal') closeModal();
+  }
+  window.onkeydown = function(e){
+    if(e.key==="Escape") closeModal();
+  }
+
+  // Tag filter function
+  function filterProjects(tag) {
+    currentFilter = tag;
     renderFilters();
     renderProjects();
-  </script>
+  }
+
+  // On load
+  renderFilters();
+  renderProjects();
+</script>
 </body>
 </html>
