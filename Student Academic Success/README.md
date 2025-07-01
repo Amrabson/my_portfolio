@@ -7,9 +7,9 @@ Demonstrates full-cycle analysis: from data cleaning and visualization to predic
 
 ## Overview
 
-This notebook investigates student performance outcomes, examining which demographic, behavioral, and institutional variables contribute most to academic success.  
+This notebook investigates student performance outcomes, examining which demographic, behavioral, and institutional variables contribute most to academic success. 
 The analysis includes exploratory data analysis (EDA), feature engineering, and development of predictive models to identify at-risk students and optimize interventions.
-In addition to the analysis notebook, a presentation (StudentAcademicSuccessFindings.pptx) summarizes the key findings, visualizations, and actionable insights from the project.
+In addition to the Jupyter Notebook analysis, a PowerPoint presentation summarizing key findings and recommendations is available upon request. Please contact the author for access.
 
 ---
 
@@ -52,7 +52,6 @@ In addition to the analysis notebook, a presentation (StudentAcademicSuccessFind
 ## File Structure
 
 ├── StudentAcademicSuccessAnalysis.ipynb # Main analysis notebook <br>
-├── Student_Academic_Success.pptx # Summary presentation of results
 ├── README.md # Project documentation <br>
 ├── dataset # Dataset directory<br>
 
