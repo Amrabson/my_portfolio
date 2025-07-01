@@ -35,7 +35,8 @@ Using a real-world health dataset, we explore variable distributions, relationsh
 
 1. **Open `StrokeAnalysis.ipynb`** in [Jupyter Notebook](https://jupyter.org/) or [JupyterLab](https://jupyterlab.readthedocs.io/).
 2. Ensure required packages are installed (`pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`).
-3. Run all cells to reproduce analysis, plots, and results.
+3. Place the csv dataset into the same fodler you run the notebook
+4. Run all cells to reproduce analysis, plots, and results.
 
 ---
 
