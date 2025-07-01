@@ -50,10 +50,9 @@ Using a real-world health dataset, we explore variable distributions, relationsh
 
 ## File Structure
 
-├── StrokeAnalysis.ipynb # Main analysis notebook
-├── README.md # Project documentation 
-├── data/
-│   └── stroke-data.csv     # The CSV dataset
+├── StrokeAnalysis.ipynb # Main analysis notebook <br>
+├── README.md # Project documentation <br>
+├── stroke-data.csv     # The CSV dataset <br>
 
 ---
 
