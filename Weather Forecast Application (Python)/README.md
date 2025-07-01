@@ -1,4 +1,4 @@
-# Weather Forecast Application (Python)
+# Weather Forecast CLI (Python)
 
 A robust, user-friendly command-line tool to retrieve real-time weather conditions for any U.S. location using the OpenWeatherMap API. Developed as part of the MSc Data Science program.
 
