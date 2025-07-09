@@ -267,6 +267,26 @@
       font-size: 1.06em;
       color: #a0aec0;
     }
+    .contact-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--main-bg);
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.33em 1.18em;
+  margin-right: 0.6em;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,196,255,0.09);
+  border: none;
+  transition: background 0.16s, color 0.16s, box-shadow 0.22s;
+}
+.contact-btn:hover {
+  background: var(--main-bg);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  box-shadow: 0 4px 18px rgba(0,196,255,0.15);
+}
+
     .about-contact a {
       color: var(--accent-dark);
       text-decoration: none;
@@ -312,10 +332,12 @@
         <li>Project Management & Communication</li>
       </ul>
       <div class="about-contact">
-        <b>Contact:</b><br>
-        Email: <a href="mailto:arabson@my365.bellevue.edu">arabson@my365.bellevue.edu</a><br>
-        GitHub: <a href="https://github.com/Amrabson" target="_blank">Amrabson</a><br>
-        <span>Presentation decks available on request.</span>
+        <b>Contact:</b>
+          <div style="margin-top:0.9em; margin-bottom:0.8em;">
+            <a class="contact-btn" href="mailto:arabson@my365.bellevue.edu">Email</a>
+            <a class="contact-btn" href="https://github.com/Amrabson" target="_blank">GitHub</a>
+          </div>
+          <span>Presentation decks available on request.</span>
       </div>
     </section>
   </main>
