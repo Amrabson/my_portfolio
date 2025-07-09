@@ -354,17 +354,85 @@
       }
     }
 
-    // === Your project cards data as before ===
-    // (Paste your up-to-date PROJECTS array here)
-
-    // ... Rest of your JS logic below (renderFilters, renderProjects, modal code, etc) ...
-    // (No changes needed to your projects rendering logic)
-    
     // === CONFIGURE YOUR PROJECTS HERE ===
     // ... your PROJECTS array from above ...
     const PROJECTS = [
-      // ... your projects as in the previous answer ...
-    ];
+  {
+    title: "Portfolio Website (This Page)",
+    desc: "Custom, filterable data science portfolio website. Modern design, dynamic JS-rendered project cards, modal popups, and full mobile support.",
+    tags: ["Portfolio", "HTML", "CSS", "JavaScript"],
+    img: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1420&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=format&fit=crop&w=600&q=80",
+    links: [
+      { text: "View Source", url: "https://github.com/Amrabson/my_portfolio" }
+    ]
+  },
+  {
+    title: "AI Influence On Employment",
+    desc: "Analysis of how AI technologies are impacting global employment trends. Includes EDA, ML models, dashboards, and reporting.",
+    tags: ["AI", "EDA", "Regression", "Report"],
+    img: "https://images.pexels.com/photos/6153354/pexels-photo-6153354.jpeg?auto=format&fit=crop&w=600&q=80",
+    links: [
+      { text: "Open Folder", url: "https://github.com/Amrabson/my_portfolio/tree/main/AI%20Influence%20On%20Employment/" }
+    ]
+  },
+  {
+    title: "Air Pollution Project",
+    desc: "Comprehensive analysis of global air pollution data. Features data cleaning, EDA, statistical modeling, and insights into environmental risk factors.",
+    tags: ["Environment", "EDA", "Regression", "Visualization"],
+    img: "https://images.pexels.com/photos/459728/pexels-photo-459728.jpeg?auto=format&fit=crop&w=600&q=80",
+    links: [
+      { text: "Open Folder", url: "https://github.com/Amrabson/my_portfolio/tree/main/Air%20Pollution%20Project/" }
+    ]
+  },
+  {
+    title: "Stroke Risk Analysis",
+    desc: "Data science investigation of factors contributing to stroke risk. Includes data wrangling, EDA, logistic regression, and interpretability.",
+    tags: ["Health", "EDA", "Logistic Regression", "Predictive Modeling"],
+    img: "https://images.pexels.com/photos/17483868/pexels-photo-17483868.jpeg?auto=format&fit=crop&w=600&q=80",
+    links: [
+      { text: "Open Folder", url: "https://github.com/Amrabson/my_portfolio/tree/main/Stroke%20Risk%20Analysis/" }
+    ]
+  },
+  {
+    title: "Student Academic Success",
+    desc: "Analysis and modeling of factors impacting student academic outcomes. Full cycle: data prep, EDA, feature engineering, and classification models. Summary presentation available upon request.",
+    tags: ["Education", "EDA", "Classification", "Feature Engineering"],
+    img: "https://images.pexels.com/photos/7713511/pexels-photo-7713511.jpeg?auto=format&fit=crop&w=600&q=80",
+    links: [
+      { text: "Open Folder", url: "https://github.com/Amrabson/my_portfolio/tree/main/Student%20Academic%20Success/" }
+    ]
+  },
+  {
+    title: "Student Depression Analysis",
+    desc: "Exploratory and predictive analytics of student depression data. Includes EDA, machine learning models, and actionable mental health insights.",
+    tags: ["Health", "EDA", "Classification", "ML"],
+    img: "https://images.pexels.com/photos/22039041/pexels-photo-22039041.jpeg?auto=format&fit=crop&w=600&q=80",
+    links: [
+      { text: "Open Folder", url: "https://github.com/Amrabson/my_portfolio/tree/main/Student%20Depression%20Analysis/" }
+    ]
+  },
+  {
+    title: "Weather Forecast Application",
+    desc: "Command-line tool for real-time US weather lookup via OpenWeatherMap API. Search by city/state or zip code, choose temperature units, and view detailed forecasts.",
+    tags: ["Python", "API", "CLI", "Weather"],
+    img: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=format&fit=crop&w=600&q=80",
+    links: [
+      { text: "Open Folder", url: "https://github.com/Amrabson/my_portfolio/tree/main/Weather%20Forecast%20CLI%20Application/" }
+    ]
+  },
+
+
+    // Add more projects below!
+    // {
+    //   title: "Another Project",
+    //   desc: "Short summary.",
+    //   tags: ["ML", "Big Data"],
+    //   img: "url_or_path_to_image",
+    //   links: [
+    //     { text: "View", url: "path_to_folder_or_file" }
+    //   ]
+    // }
+  ];
 
     // Get all unique tags
     const ALL_TAGS = [...new Set(PROJECTS.flatMap(p => p.tags))].sort();
