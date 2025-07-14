@@ -309,6 +309,7 @@
   <!-- Tab Bar -->
   <nav class="tab-bar">
     <button class="tab-btn active" id="projectsTab" onclick="switchTab('projects')">Projects</button>
+    <button class="tab-btn" id="sideTab" onclick="switchTab('side')">Side Projects</button>
     <button class="tab-btn" id="aboutTab" onclick="switchTab('about')">About</button>
   </nav>
 
@@ -319,12 +320,25 @@
       <section class="projects-grid" id="projectsGrid"></section>
     </section>
 
+    <!-- Side Projects Section -->
+    <section id="sideSection" hidden>
+      <div class="filter-bar" id="sideFilterBar"></div>
+      <section class="projects-grid" id="sideProjectsGrid"></section>
+    </section>
+
+
     <!-- About/Bio Section -->
-    <section id="aboutSection" class="about-section" hidden>
-      <h2>About Me</h2>
-      <p>
-        I’m <b>Aharon Rabson</b>, a Master’s graduate in Data Science (MSc, Bellevue University) with a passion for extracting actionable insights from data. My work bridges exploratory analysis, predictive modeling, and impactful visualization across health, education, climate, and AI domains.
-      </p>
+<section id="aboutSection" class="about-section" hidden>
+  <h2>About Me</h2>
+  <p>
+    I’m <b>Aharon Rabson</b>, a Master’s graduate in Data Science (MSc, Bellevue University) with a passion for extracting actionable insights from data. My work bridges exploratory analysis, predictive modeling, and impactful visualization across health, education, climate, and AI domains.
+  </p>
+  <p>
+    My journey into technology began in high school, where I spent three years immersed in IT studies—learning Java (OOP) and SQL, and ranking in the top 1% of the country. That experience sparked a lifelong love for coding and problem-solving.
+  </p>
+  <p>
+    I have a particular interest in the medical and mental health fields, but I remain fascinated by any area where data science can make a difference. I’m always eager to tackle new challenges and help drive positive impact through data.
+  </p>
       <ul class="about-list">
         <li>Python, R, SQL, and data pipelines</li>
         <li>Machine Learning & Predictive Modeling</li>
@@ -352,7 +366,7 @@
   </div>
   <footer style="padding:1.2em 0;text-align:center;color:#909aa8;background:#181c23;">
     <div>
-      <span>© Aharon Rabson 2025 · Built for NSDS Portfolio | Powered by HTML, CSS, and JS</span>
+      <span>© Aharon Rabson 2025 · Built for MSDS Portfolio | Powered by HTML, CSS, and JS</span>
     </div>
     <div style="margin-top:.6em;">
       <small>Inspired by modern UI, mobile-friendly, and 100% open source.</small>
@@ -361,21 +375,31 @@
 
   <script>
     // === Tabs toggle logic ===
-    function switchTab(tab) {
-      const projSec = document.getElementById("projectsSection");
-      const aboutSec = document.getElementById("aboutSection");
-      document.getElementById("projectsTab").classList.remove("active");
-      document.getElementById("aboutTab").classList.remove("active");
-      if (tab === "projects") {
-        projSec.hidden = false;
-        aboutSec.hidden = true;
-        document.getElementById("projectsTab").classList.add("active");
-      } else {
-        projSec.hidden = true;
-        aboutSec.hidden = false;
-        document.getElementById("aboutTab").classList.add("active");
-      }
-    }
+function switchTab(tab) {
+  const projSec = document.getElementById("projectsSection");
+  const sideSec = document.getElementById("sideSection");
+  const aboutSec = document.getElementById("aboutSection");
+  document.getElementById("projectsTab").classList.remove("active");
+  document.getElementById("sideTab").classList.remove("active");
+  document.getElementById("aboutTab").classList.remove("active");
+  if (tab === "projects") {
+    projSec.hidden = false;
+    sideSec.hidden = true;
+    aboutSec.hidden = true;
+    document.getElementById("projectsTab").classList.add("active");
+  } else if (tab === "side") {
+    projSec.hidden = true;
+    sideSec.hidden = false;
+    aboutSec.hidden = true;
+    document.getElementById("sideTab").classList.add("active");
+  } else {
+    projSec.hidden = true;
+    sideSec.hidden = true;
+    aboutSec.hidden = false;
+    document.getElementById("aboutTab").classList.add("active");
+  }
+}
+
 
     // === CONFIGURE YOUR PROJECTS HERE ===
     // ... your PROJECTS array from above ...
@@ -395,7 +419,7 @@
     tags: ["AI", "EDA", "Regression", "Report"],
     img: "https://images.pexels.com/photos/6153354/pexels-photo-6153354.jpeg?auto=format&fit=crop&w=600&q=80",
     links: [
-      { text: "Open Folder", url: "https://github.com/Amrabson/my_portfolio/tree/main/AI%20Influence%20On%20Employment/" }
+      { text: "View on GitHub", url: "https://github.com/Amrabson/my_portfolio/tree/main/ai-influence-on-employment/" }
     ]
   },
   {
@@ -404,7 +428,7 @@
     tags: ["Environment", "EDA", "Regression", "Visualization"],
     img: "https://images.pexels.com/photos/459728/pexels-photo-459728.jpeg?auto=format&fit=crop&w=600&q=80",
     links: [
-      { text: "Open Folder", url: "https://github.com/Amrabson/my_portfolio/tree/main/Air%20Pollution%20Project/" }
+      { text: "View on GitHub", url: "https://github.com/Amrabson/my_portfolio/tree/main/air-pollution-project/" }
     ]
   },
   {
@@ -413,7 +437,7 @@
     tags: ["Health", "EDA", "Logistic Regression", "Predictive Modeling"],
     img: "https://images.pexels.com/photos/17483868/pexels-photo-17483868.jpeg?auto=format&fit=crop&w=600&q=80",
     links: [
-      { text: "Open Folder", url: "https://github.com/Amrabson/my_portfolio/tree/main/Stroke%20Risk%20Analysis/" }
+      { text: "View on GitHub", url: "https://github.com/Amrabson/my_portfolio/tree/main/stroke-risk-analysis/" }
     ]
   },
   {
@@ -422,7 +446,7 @@
     tags: ["Education", "EDA", "Classification", "Feature Engineering"],
     img: "https://images.pexels.com/photos/7713511/pexels-photo-7713511.jpeg?auto=format&fit=crop&w=600&q=80",
     links: [
-      { text: "Open Folder", url: "https://github.com/Amrabson/my_portfolio/tree/main/Student%20Academic%20Success/" }
+      { text: "View on GitHub", url: "https://github.com/Amrabson/my_portfolio/tree/main/student-academic-success/" }
     ]
   },
   {
@@ -431,7 +455,7 @@
     tags: ["Health", "EDA", "Classification", "ML"],
     img: "https://images.pexels.com/photos/22039041/pexels-photo-22039041.jpeg?auto=format&fit=crop&w=600&q=80",
     links: [
-      { text: "Open Folder", url: "https://github.com/Amrabson/my_portfolio/tree/main/Student%20Depression%20Analysis/" }
+      { text: "View on GitHub", url: "https://github.com/Amrabson/my_portfolio/tree/main/student-depression-analysis/" }
     ]
   },
   {
@@ -440,12 +464,22 @@
     tags: ["Python", "API", "CLI", "Weather"],
     img: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=format&fit=crop&w=600&q=80",
     links: [
-      { text: "Open Folder", url: "https://github.com/Amrabson/my_portfolio/tree/main/Weather%20Forecast%20CLI%20Application/" }
+      { text: "View on GitHub", url: "https://github.com/Amrabson/my_portfolio/tree/main/weather-forecast-cli-application/" }
     ]
+  },
+  {
+  title: "Childcare Price Analysis",
+  desc: "Multi-format policy project analyzing US childcare costs (EDA, blog, slides, and recommendations for Bill 32).",
+  tags: ["Policy", "EDA", "Blog", "Economics", "Presentation"],
+  img: "https://unsplash.com/photos/three-children-holding-hands-standing-on-grasses-97Rpu-UmCaY?auto=format&fit=crop&w=600&q=80",  // Or any suitable childcare/policy image
+  links: [
+    { text: "View on GitHub", url: "https://github.com/Amrabson/my_portfolio/tree/main/childcare-price-analysis" }
+  ]
   },
 
 
-    // Add more projects below!
+
+    // Add more projects below
     // {
     //   title: "Another Project",
     //   desc: "Short summary.",
@@ -456,6 +490,21 @@
     //   ]
     // }
   ];
+
+    const SIDE_PROJECTS = [
+{
+  title: "Haiku App",
+  desc: "A creative Flask web app that generates random, themed haiku poetry. Includes user submissions, API access, dark/light mode, and 'sad whisper' button.",
+  tags: ["Python", "Flask", "Poetry", "Web App", "Fun"],
+  img: "https://upload.wikimedia.org/wikipedia/commons/7/74/Basho_Horohoroto.jpg?auto=format&fit=crop&w=600&q=80",
+  links: [
+    { text: "View on GitHub", url: "https://github.com/Amrabson/side_projects/tree/main/haiku-app" }
+  ]
+},
+
+  // Add more side projects here
+];
+
 
     // Get all unique tags
     const ALL_TAGS = [...new Set(PROJECTS.flatMap(p => p.tags))].sort();
@@ -526,6 +575,74 @@
       document.getElementById('modal').style.display = "flex";
       document.body.style.overflow = "hidden";
     }
+
+    // Get all unique tags for side projects
+const SIDE_TAGS = [...new Set(SIDE_PROJECTS.flatMap(p => p.tags))].sort();
+let currentSideFilter = "All";
+
+// Render filter bar for side projects
+function renderSideFilters() {
+  const filterBar = document.getElementById("sideFilterBar");
+  filterBar.innerHTML = `<button class="filter-btn${currentSideFilter === 'All' ? ' active' : ''}" onclick="filterSideProjects('All')">All</button>` +
+    SIDE_TAGS.map(tag =>
+      `<button class="filter-btn${currentSideFilter === tag ? ' active' : ''}" onclick="filterSideProjects('${tag}')">${tag}</button>`
+    ).join('');
+}
+
+// Render side project cards
+function renderSideProjects() {
+  const grid = document.getElementById("sideProjectsGrid");
+  let filtered = currentSideFilter === "All"
+    ? SIDE_PROJECTS
+    : SIDE_PROJECTS.filter(p => p.tags.includes(currentSideFilter));
+  if (!filtered.length) {
+    grid.innerHTML = `<div style="color:#8b9eb7;grid-column:1/-1;font-size:1.3em;text-align:center;padding:3em 1em;">No side projects found for <b>${currentSideFilter}</b>.</div>`;
+    return;
+  }
+  grid.innerHTML = filtered.map((p, i) => `
+    <div class="project-card" style="animation:fadein 0.5s ${(i+1)*0.06}s both;" tabindex="0"
+      onclick="showModalFromSide(${SIDE_PROJECTS.indexOf(p)})"
+      onkeypress="if(event.key==='Enter'){showModalFromSide(${SIDE_PROJECTS.indexOf(p)})}">
+      <img class="project-img" src="${p.img}" alt="${p.title}"/>
+      <div class="project-content">
+        <div class="project-title">${p.title}</div>
+        <div class="tags">${p.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}</div>
+        <div class="project-desc">${p.desc}</div>
+        <div class="project-links">
+          ${p.links.map(link =>
+            `<a href="${link.url}" target="_blank" onclick="event.stopPropagation()">${link.text}</a>`
+          ).join('')}
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// Side tag filter function
+function filterSideProjects(tag) {
+  currentSideFilter = tag;
+  renderSideFilters();
+  renderSideProjects();
+}
+
+// Modal logic for side projects
+function showModalFromSide(idx) {
+  const p = SIDE_PROJECTS[idx];
+  const inner = document.getElementById('modal-inner');
+  inner.innerHTML = `
+    <img src="${p.img}" alt="${p.title}" style="width:100%;border-radius:12px;margin-bottom:.7em;">
+    <h2 style="color:#00c4ff;margin:0 0 .25em 0;">${p.title}</h2>
+    <div style="margin-bottom:0.7em;">${p.tags.map(tag=>`<span class="tag" style="margin-right:6px;background:#3bd9d9;color:#191f24;padding:2px 8px;">${tag}</span>`).join('')}</div>
+    <div style="color:#bbb;font-size:1.08em;margin-bottom:1.1em;">${p.desc}</div>
+    <div>
+      ${p.links.map(link=>`<a href="${link.url}" style="display:inline-block;margin:0.25em 0.7em 0 0;background:#222;color:#00c4ff;padding:.37em 1.1em;border-radius:9px;font-weight:600;text-decoration:none;border:1px solid #00c4ff;" target="_blank">${link.text}</a>`).join('')}
+    </div>
+  `;
+  document.getElementById('modal').style.display = "flex";
+  document.body.style.overflow = "hidden";
+}
+
+    
     function closeModal() {
       document.getElementById('modal').style.display = "none";
       document.body.style.overflow = "";
@@ -547,6 +664,11 @@
     // On load
     renderFilters();
     renderProjects();
+
+    renderSideFilters();
+    renderSideProjects();
+
+    
   </script>
 </body>
 </html>
