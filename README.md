@@ -1,4 +1,4 @@
-# Data Science Portfolio — Aharon Rabson
+# Data Science Portfolio
 
 This repository showcases a curated collection of 10 advanced data science projects, completed as part of my Master of Science in Data Science at Bellevue University.  
 Each project demonstrates core skills in exploratory data analysis (EDA), statistical modeling, machine learning, big data engineering, and real-world business problem-solving.
