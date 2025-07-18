@@ -28,7 +28,7 @@ Each project demonstrates core skills in exploratory data analysis (EDA), statis
 - **Machine Learning:** Scikit-learn, XGBoost, TextBlob, SHAP  
 - **Big Data:** Spark, Hadoop, Hive, NiFi, HBase  
 - **Visualization:** matplotlib, seaborn, Power BI  
-- **Web & Apps:** Flask, GitHub Pages, RESTful APIs  
+- **Web & Apps:** GitHub Pages, RESTful APIs  
 - **Other:** Data cleaning, feature engineering, statistical testing, business analysis
 
 ---
