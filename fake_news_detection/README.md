@@ -1,3 +1,10 @@
+# Automated Fake News Detection Using Machine Learning & BERT
+
+A comprehensive data science project for distinguishing fake and real news articles using both classic machine learning (TF-IDF, Logistic Regression, Random Forest) and advanced deep learning (BERT, Hugging Face Transformers).  
+Techniques: EDA, text preprocessing, feature engineering, predictive modeling, and explainable AI (SHAP).
+
+---
+
 ## Overview
 
 - **Domain:** Natural Language Processing, News Media Analytics, Misinformation Detection  
