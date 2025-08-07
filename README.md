@@ -1,7 +1,6 @@
 # Data Science Portfolio
 
-This repository showcases a curated collection of 10 advanced data science projects, completed as part of my Master of Science in Data Science at Bellevue University.  
-Each project demonstrates core skills in exploratory data analysis (EDA), statistical modeling, machine learning, big data engineering, and real-world business problem-solving.
+This repository showcases a curated collection of 10 advanced data science projects, completed as part of my Master of Science in Data Science at Bellevue University.  Each project demonstrates core skills in exploratory data analysis (EDA), statistical modeling, machine learning, big data engineering, and real-world business problem-solving.
 
 ---
 
@@ -18,7 +17,7 @@ Each project demonstrates core skills in exploratory data analysis (EDA), statis
 | student-academic-success           | Factors impacting academic outcomes, classification models, EDA           |
 | student-depression-analysis        | Machine learning & analytics for student depression risk                  |
 | weather-forecast-cli-application   | Real-time weather CLI app (Python/OpenWeatherMap API)                    |
-| ...                                | [1 more project coming soon]                                             |
+| fake_news_detection              | Fake news detection using machine learning and NLP techniques             |
 
 ---
 
@@ -44,15 +43,15 @@ Each project demonstrates core skills in exploratory data analysis (EDA), statis
 
 ## 🚀 Usage
 
-- Browse each project folder for detailed documentation, Jupyter notebooks, reports, and (when available) datasets or APIs.
+- Browse each project folder for documentation, notebooks, reports, and datasets or APIs when available.
 - For any restricted datasets, contact me for access or sample data.
 
 ---
 
 ## 👨‍💻 About Me
 
-I’m **Aharon Rabson**, an MSc graduate passionate about using data for impact in health, education, climate, and AI domains.  
-Feel free to [connect or request presentations](mailto:arabson@my365.bellevue.edu).
+I’m **Aharon Rabson**, an MSc graduate passionate about using data for impact in health, education, climate, and AI domains.  Feel free to [connect or request presentations](mailto:arabson@my365.bellevue.edu).
+
 
 ---
 
