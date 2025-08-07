@@ -12,12 +12,13 @@ This repository showcases a curated collection of 10 advanced data science proje
 | air-pollution-project              | Global air pollution EDA, visualization, and risk modeling               |
 | big-data-mental-health             | Full big data pipeline for student mental health with Spark, Hive, NiFi   |
 | childcare-price-analysis           | Analysis of US childcare prices, trends, and policy implications         |
+| fake-news-detection              | Fake news detection using machine learning and NLP techniques             |
 | genai-adoption-impact              | GenAI adoption: business value, sentiment, explainable AI, white paper   |
 | stroke-risk-analysis               | Predicting stroke risk with EDA, ML, and health data                     |
 | student-academic-success           | Factors impacting academic outcomes, classification models, EDA           |
 | student-depression-analysis        | Machine learning & analytics for student depression risk                  |
 | weather-forecast-cli-application   | Real-time weather CLI app (Python/OpenWeatherMap API)                    |
-| fake_news_detection              | Fake news detection using machine learning and NLP techniques             |
+
 
 ---
 
