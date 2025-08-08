@@ -28,13 +28,22 @@
       min-height: 100vh;
     }
     header {
-      background: linear-gradient(120deg, var(--main-bg), #22334a 65%, var(--accent-dark));
-      padding: 3rem 1rem 2.5rem 1rem;
-      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      z-index: 10;
+      background: linear-gradient(120deg, #1a202c, #22334a 65%, #3bd9d9);
+      box-shadow: 0 8px 36px rgba(0,0,0,0.11);
       border-bottom-left-radius: 3rem 1.5rem;
       border-bottom-right-radius: 3rem 1.5rem;
-      box-shadow: 0 8px 36px rgba(0,0,0,0.11);
+      padding: 3rem 1rem 2.5rem 1rem;
+      text-align: center;
     }
+    main {
+      margin-top: 180px; /* Adjust so main content is not hidden under header */
+    }
+
     .avatar {
       width: 92px;
       height: 92px;
@@ -320,29 +329,37 @@
     }
 
 
-        particlesJS("particles-js", {
+    particlesJS("particles-js", {
       "particles": {
         "number": {
-          "value": 48,
-          "density": { "enable": true, "value_area": 900 }
+          "value": 55,
+          "density": { "enable": true, "value_area": 1000 }
         },
-        "color": { "value": "#fff" },  // white particles for classic look, change if you want
+        "color": { "value": "#00c4ff" },
         "shape": {
-          "type": "circle",            // use "polygon" and set nb_sides: 6 for hexagons!
-          "stroke": { "width": 0, "color": "#000" }
+          "type": "circle",  // Use "polygon" with nb_sides: 6 for hex
         },
-        "opacity": { "value": 0.55, "random": false },
-        "size": { "value": 4, "random": true },
+        "opacity": {
+          "value": 0.5, 
+          "random": false,    // Ensures they don't "pop" on/off
+          "anim": {
+            "enable": true,
+            "speed": 0.3,    // Lower for slower fade in/out
+            "opacity_min": 0.2,
+            "sync": false
+          }
+        },
+        "size": { "value": 5, "random": true },
         "line_linked": {
           "enable": true,
-          "distance": 160,
-          "color": "#fff",   // match your particle color
-          "opacity": 0.22,
+          "distance": 175,
+          "color": "#00c4ff",
+          "opacity": 0.24,
           "width": 1.2
         },
         "move": {
           "enable": true,
-          "speed": 0.20,
+          "speed": 0.09,   // Ultra slow for gentle movement
           "direction": "none",
           "random": false,
           "straight": false,
@@ -353,19 +370,15 @@
       "interactivity": {
         "detect_on": "canvas",
         "events": {
-          "onhover": { "enable": true, "mode": "grab" }, // gentle highlight on mouse
+          "onhover": { "enable": true, "mode": "grab" },
           "onclick": { "enable": false }
         },
         "modes": {
-          "grab": {
-            "distance": 160,
-            "line_linked": { "opacity": 0.45 }
-          }
+          "grab": { "distance": 185, "line_linked": { "opacity": 0.41 } }
         }
       },
       "retina_detect": true
     });
-
 
   </style>
 </head>
