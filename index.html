@@ -307,30 +307,42 @@
     box-shadow: 0 4px 18px rgba(0,196,255,0.15);
     }
 
-    particlesJS("particles-js", {
+    #particles-js {
+      position: fixed;
+      z-index: 0;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      pointer-events: none;
+    }
+    header, main, nav, footer {
+      position: relative;
+      z-index: 2;
+    }
+
+
+        particlesJS("particles-js", {
       "particles": {
         "number": {
-          "value": 50,         // Number of particles
+          "value": 48,
           "density": { "enable": true, "value_area": 900 }
         },
-        "color": { "value": "#00c4ff" }, // Accent color
+        "color": { "value": "#fff" },  // white particles for classic look, change if you want
         "shape": {
-          "type": "polygon",
-          "stroke": { "width": 0, "color": "#000" },
-          "polygon": { "nb_sides": 6 }   // Hexagon
+          "type": "circle",            // use "polygon" and set nb_sides: 6 for hexagons!
+          "stroke": { "width": 0, "color": "#000" }
         },
-        "opacity": { "value": 0.44, "random": false },
-        "size": { "value": 5, "random": true },
+        "opacity": { "value": 0.55, "random": false },
+        "size": { "value": 4, "random": true },
         "line_linked": {
           "enable": true,
-          "distance": 260,    // More lines between particles
-          "color": "#00c4ff",
-          "opacity": 0.30,    // Brighter connecting lines
+          "distance": 160,
+          "color": "#fff",   // match your particle color
+          "opacity": 0.22,
           "width": 1.2
         },
         "move": {
           "enable": true,
-          "speed": 0.22,      // Even slower for a calm effect
+          "speed": 0.20,
           "direction": "none",
           "random": false,
           "straight": false,
@@ -341,13 +353,13 @@
       "interactivity": {
         "detect_on": "canvas",
         "events": {
-          "onhover": { "enable": true, "mode": "grab" },  // Grab mode!
+          "onhover": { "enable": true, "mode": "grab" }, // gentle highlight on mouse
           "onclick": { "enable": false }
         },
         "modes": {
           "grab": {
-            "distance": 160,   // How far "grab" effect reaches
-            "line_linked": { "opacity": 0.62 }  // Line highlight when hovering
+            "distance": 160,
+            "line_linked": { "opacity": 0.45 }
           }
         }
       },
