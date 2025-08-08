@@ -307,21 +307,53 @@
     box-shadow: 0 4px 18px rgba(0,196,255,0.15);
     }
 
-  #particles-js {
-  position: fixed;
-  z-index: 0;           /* below all content */
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  pointer-events: none; /* so mouse can click through */
-  }
-  body, html {
-    background: #181c23; /* your dark bg color */
-    margin: 0; padding: 0;
-  }
-  main, header, footer {
-    position: relative;
-    z-index: 2;
-  }
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 50,         // Number of particles
+          "density": { "enable": true, "value_area": 900 }
+        },
+        "color": { "value": "#00c4ff" }, // Accent color
+        "shape": {
+          "type": "polygon",
+          "stroke": { "width": 0, "color": "#000" },
+          "polygon": { "nb_sides": 6 }   // Hexagon
+        },
+        "opacity": { "value": 0.44, "random": false },
+        "size": { "value": 5, "random": true },
+        "line_linked": {
+          "enable": true,
+          "distance": 260,    // More lines between particles
+          "color": "#00c4ff",
+          "opacity": 0.30,    // Brighter connecting lines
+          "width": 1.2
+        },
+        "move": {
+          "enable": true,
+          "speed": 0.22,      // Even slower for a calm effect
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },  // Grab mode!
+          "onclick": { "enable": false }
+        },
+        "modes": {
+          "grab": {
+            "distance": 160,   // How far "grab" effect reaches
+            "line_linked": { "opacity": 0.62 }  // Line highlight when hovering
+          }
+        }
+      },
+      "retina_detect": true
+    });
+
 
   </style>
 </head>
